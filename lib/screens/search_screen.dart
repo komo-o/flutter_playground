@@ -34,7 +34,6 @@ class _SearchScreenState extends State<SearchScreen> {
     );
 
     if (res.statusCode == 200) {
-      // モデルクラスへ変換
       final List<dynamic> body = jsonDecode(res.body);
       return body.map((dynamic json) => Article.fromJSON(json)).toList();
     } else {
